@@ -1,8 +1,7 @@
 {
   "name": "brain-games.freonmg",
-  "version": "1.0.6",
-  "description": "",
-  "main": "src/bin/brain-games.js",
+  "version": "1.0.7",
+  "description": "brain-games first nodejs project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
@@ -15,7 +14,7 @@
   "files": [
     "dist"
   ],
-  "author": "",
+  "author": "FreonMG",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
