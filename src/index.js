@@ -1,3 +1,3 @@
-const userGreeting = userName => `Hello, ${userName}!`;
+const userGreeting = userName => `Hello, ${userName}!\n`;
 
-module.exports = userGreeting;
+export default userGreeting;
