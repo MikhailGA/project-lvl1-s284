@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const readlineSync = require('readline-sync');
-const userGreeting = require('..');
+import readlineSync from 'readline-sync';
+import userGreeting from '..';
 
 console.log('Welcome to the Brain Games!');
 
