@@ -9,3 +9,4 @@ publish:
 
 lint:
 	eslint src/bin/brain-games.js
+	eslint src/bin/brain-even.js
