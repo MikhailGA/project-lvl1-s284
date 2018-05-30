@@ -1,39 +1,48 @@
 import readlineSync from 'readline-sync';
 
-export default () => {
-  const getRandom = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const getRandom = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-  const isEven = number => ((number % 2 === 0) ? 'yes' : 'no');
+const isEven = number => ((number % 2 === 0) ? 'yes' : 'no');
 
-  const startGame = (user, questCount = 3) => {
-    // check end of game
-    if (questCount === 0) {
-      console.log(`Congratulations, ${user}!`);
-      return;
-    }
-    // get random number
-    const question = getRandom(1, 20);
-    console.log(`Question: ${question}`);
-    // check parity
-    const answer = isEven(question);
-    // get user answer
-    const userAnswer = readlineSync.question('Your answer: ');
+const roundCount = 3;
+
+const startGame = (questCount) => {
+  // check end of game
+  if (questCount === 0) {
+    return true;
+  }
+  // get random number
+  const question = getRandom(1, 20);
+  console.log(`Question: ${question}`);
+  // check parity
+  const answer = isEven(question);
+
+  // get user answer
+  const userAnswer = readlineSync.question('Your answer: ');
+  if (userAnswer === answer) {
     //  if answer was correct
-    if (userAnswer === answer) {
-      console.log('Correct!');
-      startGame(user, questCount - 1);
-    } else {
-      //  if answer was incorrect
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-      console.log(`Let's try again, ${user}!`);
-    }
-  };
+    console.log('Correct!');
+    return startGame(questCount - 1);
+  }
+  //  if answer was incorrect
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+  return false;
+};
 
+export default () => {
   console.log('\nWelcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no".\n');
 
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  startGame(userName);
+  const rezult = startGame(roundCount);
+
+  if (rezult) {
+    //  if user win
+    console.log(`Congratulations, ${userName}!`);
+  } else {
+    //  if user fail
+    console.log(`Let's try again, ${userName}!`);
+  }
 };
