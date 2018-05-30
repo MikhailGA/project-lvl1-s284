@@ -16,7 +16,6 @@ const startGame = (questCount) => {
   console.log(`Question: ${question}`);
   // check parity
   const answer = isEven(question);
-
   // get user answer
   const userAnswer = readlineSync.question('Your answer: ');
   if (userAnswer === answer) {
