@@ -1,12 +1,17 @@
 install: 
 	npm install
 
-start:
+start_parity:
 	npm run babel-node -- src/bin/brain-even.js
 
 publish:
 	npm publish
 
 lint:
-	eslint src/bin/brain-games.js
-	eslint src/bin/brain-even.js
+	eslint src/
+	
+fix:
+	eslint src/ --fix
+
+build:
+	npm run build
