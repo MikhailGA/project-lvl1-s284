@@ -1,6 +1,6 @@
 {
-  "name": "brain-games.freonmg",
-  "version": "1.3.2",
+  "name": "brain-games.freon",
+  "version": "1.0.0",
   "description": "brain-games first nodejs project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
