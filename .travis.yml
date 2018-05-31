@@ -2,7 +2,7 @@
 
 language: node_js
 node_js:
-  - node v8.11.1
+  - node v10.3.0
 
 script:
   - make lint
