@@ -1,7 +1,7 @@
 import runGame from '../game-engine';
 import { getRandom } from '..';
 
-const isEven = number => ((number % 2 === 0) ? 'yes' : 'no');
+const isEven = number => (number % 2 === 0);
 
 const gameTesk = 'Answer "yes" if number even otherwise answer "no".';
 
@@ -12,7 +12,7 @@ class GameLogic {
 
   getQuestion = () => this.a;
 
-  getAnswer = () => isEven(this.a);
+  getAnswer = () => ((isEven(this.a)) ? 'yes' : 'no');
 }
 
 export default () => {
