@@ -1,5 +1,5 @@
 import runGame from '../game-engine';
-import { getRandom } from '..';
+import getRandom from '../utils';
 
 const getNod = (a, b) => {
   if (a === b) {
@@ -10,18 +10,18 @@ const getNod = (a, b) => {
 
 const gameTesk = 'Find the greatest common divisor of given numbers.';
 
-class GameLogic {
-  constructor() {
-    this.a = getRandom(1, 15);
-    this.b = getRandom(1, 15);
-  }
+const gameLogic = () => {
+  const a = getRandom(1, 20);
+  const b = getRandom(1, 20);
 
-  getQuestion = () => `${this.a} ${this.b}`;
-
-  getAnswer = () => getNod(this.a, this.b);
-}
+  const solution = {
+    getQuestion: () => `${a} ${b}`,
+    getAnswer: () => getNod(a, b),
+  };
+  return solution;
+};
 
 export default () => {
-  runGame(gameTesk, GameLogic);
+  runGame(gameTesk, gameLogic);
 };
 

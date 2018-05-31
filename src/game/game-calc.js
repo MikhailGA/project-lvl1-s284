@@ -1,5 +1,5 @@
 import runGame from '../game-engine';
-import { getRandom } from '..';
+import getRandom from '../utils';
 
 const expressions = {
   1: [(a, b) => a * b, (a, b) => `${a} * ${b}`],
@@ -9,19 +9,17 @@ const expressions = {
 
 const gameTesk = 'What is the result of the expression?';
 
-class GameLogic {
-  constructor(round) {
-    this.a = getRandom(1, 20);
-    this.b = getRandom(1, 20);
-    this.round = round;
-  }
+const gameLogic = (round) => {
+  const a = getRandom(1, 20);
+  const b = getRandom(1, 20);
 
-  getQuestion = () => expressions[this.round][1](this.a, this.b);
-
-  getAnswer = () => expressions[this.round][0](this.a, this.b);
-}
-
-export default () => {
-  runGame(gameTesk, GameLogic);
+  const solution = {
+    getQuestion: () => expressions[round][1](a, b),
+    getAnswer: () => expressions[round][0](a, b),
+  };
+  return solution;
 };
 
+export default () => {
+  runGame(gameTesk, gameLogic);
+};
