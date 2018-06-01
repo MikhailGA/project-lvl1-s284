@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import runGame from '../game/game-parity';
+import runGame from '../game/parity';
 
 runGame();

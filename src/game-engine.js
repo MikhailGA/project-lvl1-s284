@@ -8,14 +8,13 @@ const startGame = (logic, questCount) => {
     return true;
   }
   // get new task
-  const newTask = logic(questCount);
-  const question = newTask.getQuestion();
-  const answer = String(newTask.getAnswer());
+  const newTask = logic();
+  const { question, answer } = newTask;
   console.log(`Question: ${question}`);
 
   // get user answer
   const userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer === answer) {
+  if (userAnswer === String(answer)) {
     //  if answer was correct
     console.log('Correct!');
     return startGame(logic, questCount - 1);

@@ -1,10 +1,10 @@
 import runGame from '../game-engine';
 import getRandom from '../utils';
 
-const gameTesk = 'What number is missing in this progression?';
+const gameTask = 'What number is missing in this progression?';
 const elementCount = 10;
 
-const makeProgr = (itemCount) => {
+const makeProgression = (itemCount) => {
   const startItem = getRandom(1, 100);
   const delta = getRandom(2, 10);
 
@@ -12,9 +12,8 @@ const makeProgr = (itemCount) => {
     if (count === 0) {
       return arr;
     }
-    arr.push(item);
     const nextItem = item + delta;
-    return iter(arr, count - 1, nextItem);
+    return iter([...arr, item], count - 1, nextItem);
   };
 
   return iter([], itemCount, startItem);
@@ -28,16 +27,16 @@ const hideItem = (arr, number) => {
 
 const getItem = (arr, number) => arr[number - 1];
 
-const gameLogic = () => {
-  const progression = makeProgr(elementCount);
+const gameData = () => {
+  const progression = makeProgression(elementCount);
   const hidNumber = getRandom(1, elementCount);
-  const solution = {
-    getQuestion: () => hideItem(progression, hidNumber).join(' '),
-    getAnswer: () => getItem(progression, hidNumber),
-  };
-  return solution;
+
+  const question = hideItem(progression, hidNumber).join(' ');
+  const answer = getItem(progression, hidNumber);
+
+  return { question, answer };
 };
 
 export default () => {
-  runGame(gameTesk, gameLogic);
+  runGame(gameTask, gameData);
 };
