@@ -30,7 +30,7 @@ const getItem = (arr, number) => arr[number - 1];
 
 const gameLogic = () => {
   const progression = makeProgr(elementCount);
-  const hidNumber = getRandom(0, elementCount);
+  const hidNumber = getRandom(1, elementCount);
 
   const solution = {
     getQuestion: () => hideItem(progression, hidNumber).join(' '),
