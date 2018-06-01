@@ -5,13 +5,11 @@ Brain-games
 
 ABOUT Brain-games 
 -----------------
-<hr>
 
 This is a training project that includes a set of logical games, created to improve programming skills in the Java script language.
 
 INSTALLATION
 ------------
-<hr>
 
 ```
 npm install brain-games.freon
@@ -19,7 +17,6 @@ npm install brain-games.freon
 
 GAMES
 -----
-<hr>
 
 The package includes 6 games
 1. brain-even;
@@ -31,7 +28,6 @@ The package includes 6 games
 
 PROCESS OF THE GAME
 -------------------
-<hr>
 
 To start the game, type its name in the console. For example:
 ```
