@@ -31,7 +31,7 @@ const getItem = (arr, number) => arr[number - 1];
 const gameLogic = () => {
   const progression = makeProgr(elementCount);
   const hidNumber = getRandom(1, elementCount);
-
+  console.log(hidNumber);
   const solution = {
     getQuestion: () => hideItem(progression, hidNumber).join(' '),
     getAnswer: () => getItem(progression, hidNumber),
