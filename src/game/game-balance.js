@@ -23,7 +23,7 @@ const getBalace = (number) => {
 };
 
 const gameLogic = () => {
-  const a = getRandom(10, 50);
+  const a = getRandom(10, 4000);
 
   const solution = {
     getQuestion: () => a,
