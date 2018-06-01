@@ -8,20 +8,17 @@ const numToArr = number => String(number).split('').map(Number);
 const makeBalanceNumber = (number) => {
   const array = numToArr(number);
 
-  const iter = (arr) => {
-    const sortArr = arr.slice().sort((a, b) => a - b);
-    const delta = sortArr[sortArr.length - 1] - sortArr[0];
-    if (delta > 1) {
-      const firstItem = sortArr[0];
-      const lastItem = sortArr[sortArr.length - 1];
-      const arrBody = sortArr.slice(1, sortArr.length - 1);
+  array.sort((a, b) => a - b);
+  let delta = array[array.length - 1] - array[0];
 
-      return iter([firstItem + 1, ...arrBody, lastItem - 1]);
-    }
-    return sortArr;
-  };
+  while (delta > 1) {
+    array[0] += 1;
+    array[array.length - 1] -= 1;
+    array.sort((a, b) => a - b);
+    delta = array[array.length - 1] - array[0];
+  }
 
-  return iter(array).join('');
+  return array.join('');
 };
 
 const gameData = () => {
