@@ -15,7 +15,7 @@ const gameData = () => {
   const b = getRandom(1, 100);
 
   const question = `${a} ${b}`;
-  const answer = getNod(a, b);
+  const answer = String(getNod(a, b));
 
   return { question, answer };
 };

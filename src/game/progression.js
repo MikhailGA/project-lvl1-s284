@@ -32,7 +32,7 @@ const gameData = () => {
   const hidNumber = getRandom(1, elementCount);
 
   const question = hideItem(progression, hidNumber).join(' ');
-  const answer = getItem(progression, hidNumber);
+  const answer = String(getItem(progression, hidNumber));
 
   return { question, answer };
 };

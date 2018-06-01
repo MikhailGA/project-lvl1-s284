@@ -12,10 +12,10 @@ const gameTask = 'What is the result of the expression?';
 const gameData = () => {
   const a = getRandom(1, 50);
   const b = getRandom(1, 50);
-  const round = getRandom(1, 3);
+  const expressionNumber = getRandom(1, 3);
 
-  const question = expressions[round][1](a, b);
-  const answer = expressions[round][0](a, b);
+  const question = expressions[expressionNumber][1](a, b);
+  const answer = String(expressions[expressionNumber][0](a, b));
 
   return { question, answer };
 };

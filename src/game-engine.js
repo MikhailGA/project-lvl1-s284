@@ -14,7 +14,7 @@ const startGame = (logic, questCount) => {
 
   // get user answer
   const userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer === String(answer)) {
+  if (userAnswer === answer) {
     //  if answer was correct
     console.log('Correct!');
     return startGame(logic, questCount - 1);

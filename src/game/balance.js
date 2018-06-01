@@ -28,7 +28,7 @@ const gameData = () => {
   const a = getRandom(10, 4000);
 
   const question = a;
-  const answer = makeBalanceNumber(a);
+  const answer = String(makeBalanceNumber(a));
 
   return { question, answer };
 };
