@@ -15,11 +15,11 @@ const isPrime = (number) => {
     return false;
   };
 
-  return iter(2);
+  return (number < 2) ? false : iter(2);
 };
 
 const gameData = () => {
-  const a = getRandom(2, 150);
+  const a = getRandom(1, 150);
 
   const question = a;
   const answer = isPrime(a) ? 'yes' : 'no';
