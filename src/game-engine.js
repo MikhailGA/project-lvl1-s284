@@ -31,13 +31,11 @@ export default (gameTask, gameLogic) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  const result = startGame(gameLogic, roundCount);
+  const isWin = startGame(gameLogic, roundCount);
 
-  if (result) {
-    //  if user win
+  if (isWin) {
     console.log(`Congratulations, ${userName}!`);
   } else {
-    //  if user fail
     console.log(`Let's try again, ${userName}!`);
   }
 };
